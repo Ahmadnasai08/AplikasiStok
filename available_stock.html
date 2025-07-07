@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Stok Tersedia</h1>
+    <table>
+        <tr>
+            <th>Produk</th>
+            <th>Stok Tersedia</th>
+        </tr>
+        {% for stock in available_stocks %}
+            <tr>
+                <td>{{ stock.produk }}</td>
+                <td>{{ stock.stok_tersedia }} Pcs</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Dashboard Stok{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            menu.classList.toggle("show");
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <h2>Menu</h2>
+
+            <!-- Ikon Hamburger -->
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i> <!-- Ikon 3 Garis -->
+            </div>
+
+            <!-- Menu yang bisa ditoggle -->
+            <ul id="menu">
+                <li><a href="{{ url_for('home') }}"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="{{ url_for('sales_entry') }}"><i class="fas fa-cart-plus"></i> Entri Penjualan</a></li>
+                <li><a href="{{ url_for('stock_entry') }}"><i class="fas fa-boxes"></i> Entri Stok</a></li>
+                <li><a href="{{ url_for('daftar_produk') }}"><i class="fas fa-box"></i> Daftar Produk</a></li>
+                <li><a href="{{ url_for('sales_report') }}"><i class="fas fa-file-invoice-dollar"></i> Laporan Penjualan</a></li>
+                <li><a href="{{ url_for('available_stock') }}"><i class="fas fa-cogs"></i> Stok Tersedia</a></li>
+                <li><a href="{{ url_for('tambah_produk') }}"><i class="fas fa-plus-circle"></i> Tambah Produk</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</body>
+</html>

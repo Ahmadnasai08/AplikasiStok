@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Laporan Penjualan</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Produk</th>
+                <th>Total Terjual</th>
+                <th>Total Pendapatan</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in sales_data %}
+                <tr>
+                    <td>{{ data.produk }}</td>
+                    <td>{{ data.total_terjual }} Pcs</td>
+                    <td>Rp {{ data.total_pendapatan | number_format }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

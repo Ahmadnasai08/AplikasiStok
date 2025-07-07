@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Daftar Produk</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Produk</th>
+                <th>Harga Satuan</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for produk in produk %}
+                <tr>
+                    <td>{{ produk.produk }}</td>
+                    <td>Rp {{ produk.harga_satuan }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

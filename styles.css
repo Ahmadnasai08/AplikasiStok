@@ -1,0 +1,375 @@
+
+/* Umum */
+body {
+    font-family: 'Helvetica Neue', sans-serif; /* Font yang lebih modern dan elegan */
+    background-color: #f7f7f7; /* Latar belakang yang lebih terang untuk tampilan bersih */
+    color: #333; /* Warna teks yang lebih gelap agar kontras dengan latar belakang */
+    margin: 0;
+    padding: 0;
+}
+
+/* Judul */
+h1, h2 {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    color: #333; /* Warna teks yang lebih gelap agar terlihat lebih elegan */
+}
+
+/* Container utama */
+.container {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: row;
+    position: relative;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #BFA276; /* Sidebar menggunakan warna coklat */
+    color: #FFFFFF;
+    padding-top: 30px;
+    position: fixed;
+    height: 100%;
+    padding-left: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar Menu */
+.sidebar h2 {
+    font-size: 24px;
+    color: #FFFFFF;
+    margin-bottom: 40px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #707070;
+}
+
+/* Ikon Hamburger */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #FFFFFF;
+    padding: 10px;
+    background-color: #4E4E4E;
+    border-radius: 5px;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 250px;
+    padding: 40px;
+    width: 100%;
+    background-color: #FFFFFF;
+    border-radius: 12px; /* Membuat sudut lebih melengkung */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Efek bayangan halus */
+}
+
+/* Responsif untuk tampilan sidebar */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        position: relative;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .sidebar ul {
+        display: none;
+    }
+
+    .sidebar ul.show {
+        display: block;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+}
+
+/* Dashboard */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    background-color: #f4f4f4; /* Ganti dengan warna lebih terang */
+    padding: 20px;
+    border-radius: 12px; /* Membuat sudut lebih melengkung */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Efek bayangan halus */
+}
+
+.dashboard-header h1 {
+    font-size: 32px; /* Ukuran font yang sedikit lebih besar */
+    color: #444;
+    margin: 0;
+}
+
+.dashboard-header .dashboard-button {
+    background-color: #6c757d; /* Warna tombol yang lebih elegan */
+    color: #FFFFFF;
+    padding: 12px 25px; /* Padding lebih besar untuk tombol yang lebih elegan */
+    border: none;
+    border-radius: 8px; /* Sudut tombol lebih lembut */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dashboard-header .dashboard-button:hover {
+    background-color: #495057; /* Warna tombol lebih gelap saat hover */
+}
+
+/* Container untuk data utama (Total Pendapatan, Stok Masuk, Stok Terjual, Stok Tersedia) */
+.dashboard-data-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.dashboard-data-card {
+    background-color: #ffffff;
+    width: 22%;
+    padding: 25px; /* Menambah padding agar terasa lebih luas */
+    border-radius: 12px; /* Membuat sudut lebih melengkung */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Efek bayangan lebih halus */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Menambahkan transisi efek bayangan */
+}
+
+.dashboard-data-card:hover {
+    transform: translateY(-5px); /* Efek hover yang lebih lembut */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* Efek bayangan lebih dramatis saat hover */
+}
+
+.dashboard-data-card h3 {
+    font-size: 22px; /* Ukuran font yang lebih besar agar mudah dibaca */
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.dashboard-data-card p {
+    font-size: 20px; /* Ukuran font lebih besar untuk kesan elegan */
+    color: #777; /* Warna teks lebih lembut */
+    font-weight: 500;
+}
+
+/* Form Container */
+.form-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #FFFFFF;
+    border-radius: 12px; /* Sudut melengkung untuk desain lebih lembut */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Efek bayangan lebih halus */
+}
+
+.form-container h1 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #4E4E4E;
+    margin-bottom: 20px;
+}
+
+/* Form Grup */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #4E4E4E;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Input Field */
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #BFA276;
+    box-sizing: border-box;
+    transition: border 0.3s ease;
+}
+
+/* Efek Fokus pada Input dan Select */
+.form-group input:focus, .form-group select:focus {
+    border: 1px solid #4E4E4E;
+    outline: none;
+}
+
+/* Tombol Submit */
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #4E4E4E;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Efek Hover pada Tombol */
+button:hover {
+    background-color: #707070;
+}
+
+/* Tabel Elegan */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #FFFFFF;
+    border-radius: 12px; /* Sudut melengkung pada tabel */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Efek bayangan pada tabel */
+}
+
+/* Header Tabel */
+table th {
+    background-color: #4E4E4E;
+    color: #FFFFFF;
+    padding: 12px;
+    font-size: 16px;
+    text-align: left;
+    border-top-left-radius: 12px; /* Sudut lebih melengkung */
+    border-top-right-radius: 12px;
+}
+
+/* Data Tabel */
+table td {
+    padding: 12px;
+    text-align: left;
+    font-size: 14px;
+    color: #4E4E4E;
+    border-bottom: 1px solid #BFA276;
+}
+
+/* Efek Hover pada Baris Tabel */
+table tr:nth-child(even) {
+    background-color: #F5F5F5;
+}
+
+table tr:hover {
+    background-color: #E5D7C3;
+}
+
+/* Footer Tabel */
+table tfoot {
+    background-color: #F0F0F0;
+    font-weight: bold;
+    color: #4E4E4E;
+}
+
+/* Responsif untuk Tabel */
+@media (max-width: 768px) {
+    table th, table td {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    table {
+        margin-top: 10px;
+    }
+
+    .dashboard-data-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .dashboard-data-card {
+        width: 100%;
+    }
+}
+/* ====================  DASHBOARD  ==================== */
+.dashboard-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.dashboard-card {
+    background-color: #fff;
+    border-left: 8px solid #BFA276;          /* warna identitas */
+    box-shadow: 0 2px 10px rgba(0,0,0,.05);  /* depth ringan   */
+    padding: 20px;
+    flex: 1 1 220px;                         /* minimum width  */
+    border-radius: 8px;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0,0,0,.15);
+}
+
+.dashboard-card h3 {
+    margin: 0 0 10px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.dashboard-card p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #BFA276;
+}
+.sales-summary {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.summary-card {
+    background-color: #fff;
+    border-left: 8px solid #BFA276;
+    box-shadow: 0 2px 10px rgba(0,0,0,.05);
+    padding: 20px;
+    flex: 1 1 220px;
+    border-radius: 8px;
+}
+
+.summary-card h3 {
+    margin: 0 0 10px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.summary-card p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #BFA276;
+}
